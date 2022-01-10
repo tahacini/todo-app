@@ -1,23 +1,22 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { useState } from "react";
+import Title from "./components/Title";
+import Add from "./components/Add";
+import Display from "./components/Display";
+import { useSelector } from "react-redux";
 
 function App() {
+  const [openAdd, setOpenAdd] = useState(true);
+  const tasks = useSelector((state) => state.tasks);
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="wrapper">
+      <Title openAdd={setOpenAdd} />
+      {openAdd && <Add />}
+      {tasks.length > 0 ? (
+        <Display />
+      ) : (
+        <div className="empty">Don't You Have Anyting ToDo?</div>
+      )}
     </div>
   );
 }
