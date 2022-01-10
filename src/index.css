@@ -1,13 +1,187 @@
-body {
+* {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  display: grid;
+  background-color: #fefefe;
+  padding-top: 3rem;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+.wrapper {
+  width: min(90%, 40rem);
+  margin: 0 auto;
+  min-height: 18rem;
+  background-color: inherit;
+  padding: 1rem;
+  border: 1px solid black;
+  box-shadow: 5px 5px 5px rgb(207, 207, 206);
+  border-radius: 8px;
+}
+
+.title {
+  display: flex;
+  justify-content: space-around;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid black;
+  margin-bottom: 2rem;
+}
+
+.title button {
+  padding: 1em 2em;
+  border-radius: 15px;
+  border: none;
+  background-color: rgb(34, 124, 207);
+  color: white;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.title button:hover {
+  transform: scale(1.03);
+}
+
+.title h1 {
+  font-size: 2.5rem;
+}
+
+.add-container {
+  padding-bottom: 1rem;
+  border-bottom: 1px solid black;
+  margin-bottom: 2rem;
+}
+
+.add-container > form > * {
+  margin-bottom: 1rem;
+}
+
+.add-text {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  font-size: 1.5rem;
+}
+
+.add-text input {
+  padding: 1rem;
+  font-size: 1.1rem;
+  border-radius: 10px;
+  border: 1px solid rgb(34, 124, 207);
+}
+
+.add-text input:focus {
+  outline: none;
+}
+
+.reminder {
+  margin: 20px 0;
+  font-size: 1.5rem;
+  display: flex;
+  align-items: center;
+}
+
+.reminder input {
+  width: 10%;
+  height: 30px;
+  margin: 5px;
+  padding: 3px 7px;
+  font-size: 17px;
+  cursor: pointer;
+}
+
+.btn {
+  display: block;
+}
+
+.btn:hover {
+  transform: scale(1.005);
+}
+
+.btn > input {
+  width: 100%;
+  font-size: 1.5rem;
+  padding: 0.5em 0;
+  border-radius: 15px;
+  cursor: pointer;
+  border: none;
+  font-weight: 600;
+  background-color: rgb(34, 124, 207);
+  color: white;
+}
+
+.line > * {
+  width: 100%;
+  color: white;
+  border-radius: 0 10px 10px 0;
+  background-color: black;
+  padding: 1rem;
+  font-size: 1.25rem;
+  margin: 1rem 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  user-select: none;
+}
+
+.line > *:hover {
+  transform: scale(1.005);
+}
+
+.reminder-false {
+  border-left: solid 1rem black;
+}
+
+.reminder-true {
+  border-left: solid 1rem rgb(34, 124, 207);
+}
+
+.x {
+  width: 1.5rem;
+  height: 1.5rem;
+  margin-right: 0.25rem;
+  position: relative;
+  background-color: inherit;
+  border: none;
+  cursor: pointer;
+}
+
+.x:hover {
+  transform: scale(1.13);
+}
+
+.x::before,
+.x::after {
+  display: block;
+  content: "";
+  position: absolute;
+  width: 110%;
+  height: 4px;
+  border-radius: 50px;
+  background-color: rgb(248, 36, 36);
+}
+
+.x::after {
+  transform: rotate(45deg);
+  top: 45%;
+  left: -25%;
+}
+
+.x::before {
+  transform: rotate(-45deg);
+  left: -25%;
+  top: 45%;
+}
+
+.empty {
+  font-size: 1.75rem;
+  text-align: center;
+  vertical-align: middle;
+  font-weight: 600;
 }
